@@ -1,0 +1,31 @@
+<div class="container">
+    <br>
+    <b>Product Details</b>
+    <br>
+
+<div class="card bg-primary text-white">
+    
+    <div class="card-body" style="text-align:left">
+
+        <img [src]="productDetails.pimage" [alt]="productDetails.pname" style="width: 100%"> <br>
+       <div class="card-text">
+            Id: <h6>{{productDetails._id}}</h6> <br>
+            name: <h2 class="name">{{productDetails.pname}}</h2> <br>
+            price: <br><span>₹</span><span><h2 class="price">{{productDetails.pvalue}}</h2></span> <br>
+            desc: <h4>{{productDetails.pdesc}}</h4> <br>
+            <label for="quantity">Quantity</label>
+            <div>
+                <input type="number" name="quantity" [(ngModel)]="quantity" placeholder="" min="1" max="5" required>
+            </div>
+            <br>
+            <div class="container">
+                <button type="button" class="button" (click)='goCart(productDetails._id)'>Add to cart</button>
+            </div>            
+            
+            <!-- ram: <h3>{{productDetails.ram}}</h3> <br>
+            os: <h4>{{productDetails.os}}</h4> <br>
+            processor: <h4>{{productDetails.processor}}</h4> <br>
+            graphics: <h4>{{productDetails.graphics}}</h4> <br> -->
+       </div>
+</div>
+</div>

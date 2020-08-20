@@ -1,0 +1,29 @@
+
+
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody *ngFor='let u of cartM'>
+            <tr>
+                <td>{{u.p_id}}</td>
+                <td>{{u.pname}}</td>
+                <td>{{u.pvalue}}</td>
+                <td>{{u.quantity}}</td>               
+                <td>{{u.pvalue * u.quantity}}</td>
+                <td>
+                    <button type="button" class="button" (click)=deleteCartItem(u.p_id)>Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="button" (click)=goCheckout(u)>Proceed To Chekout</button>
+</div>

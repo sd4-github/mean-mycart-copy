@@ -1,0 +1,26 @@
+<br>
+<div class="container">
+    <b>Login</b>
+    <br />
+    <form (ngSubmit)='loginUser(loginForm)' [formGroup]='loginForm'>
+        email:
+        <input formControlName='email' type="email" class="form-control" placeholder="enter email">
+        <div class="alert alert-danger"
+            *ngIf="loginForm.get('email').hasError(required) && loginForm.get('email').touched">
+            email is required
+        </div>
+        <br>
+        password:
+        <input formControlName='password' type="password" class="form-control" placeholder="enter password">
+        <div class="alert alert-danger" *ngIf="!loginForm.get('password').valid && loginForm.get('email').touched">
+            password is required
+        </div>
+        <br>
+        <div class="form-check">
+            <input formControlName='checkbox' type="checkbox" name="checkbox" id="checkbox" class="form-check-input" [checked]="true">
+             <label class="form-check-label" for="checkbox">Check me out</label>
+        </div> <br>
+        <button [disabled]='loginForm.invalid' class="btn btn-primary">login</button>
+    </form>
+
+</div>
