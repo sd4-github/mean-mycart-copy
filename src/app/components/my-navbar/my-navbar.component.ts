@@ -13,7 +13,8 @@ import { ProductsServiceService } from 'src/app/services/products-service.servic
 })
 export class MyNavbarComponent implements OnInit{
   token;
-  term; 
+  usertype;
+  term;
   productData;
   products;
   productArray
@@ -21,6 +22,7 @@ export class MyNavbarComponent implements OnInit{
 
   constructor(private breakpointObserver: BreakpointObserver, private storagesrvc: AuthServiceService,private productSrvc:ProductsServiceService , private router:Router) {
     this.token=this.storagesrvc.getToken();
+    this.usertype=this.storagesrvc.getUserType();
   }
 
   //angular material
